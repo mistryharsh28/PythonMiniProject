@@ -1,0 +1,79 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+ 
+<head>
+
+<title>MyWebsite</title>
+ 
+<link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}"/>
+<link rel="stylesheet" href="{% static 'css/app.css' %}">
+<link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300,300i,400,400i,700i" rel="stylesheet">
+ 
+<style>
+          
+</style>
+</head>
+
+<body>
+    
+ 
+<header>
+	<div class="logo float-left">
+		
+	</div> 
+	<div class="nav-icon float-right">
+		<span></span>
+		<span></span>
+		<span></span>
+	</div>
+</header>
+
+<!-- Full Menu -->
+<div class="full-menu">
+	<div class="fullmenu-content">
+		<ul class="page-menu">
+			<li><a class="active" href="{% url 'home' %}">Text to Speech</a></li>
+		</ul>
+	</div>
+	<a href="#0" class="modal-close"></a>
+</div>
+<div class="cd-transition-layer visible opening"> 
+	<div class="bg-layer"></div>
+</div><!-- Ink Transition -->
+
+<div class="wrapper">
+ 
+<section class="main">
+	<div class="main-content">
+        <h1 class="main-title" style="color:white">Text to Speech<br>
+		</h1>
+		<div>
+			<form action="{% url 'text_to_speech' %}" method="POST">{% csrf_token %}
+				<label for="text" style="color: white">Text: </label>
+				<input id="text" type="text" name="text" required>
+				<label for="language">Language: </label>
+				<input id="language" type="text" name="language"><br>
+				<input type="submit" value="Play">
+			</form>
+		</div>
+		<!-- <div class="social">
+			<a href="#"><img src="{% static 'icons/social/twitter.svg' %}" alt=""></a>
+			<a href="#"><img src="{% static 'icons/social/instagram.svg' %}" alt=""></a>
+			<a href="#"><img src="{% static 'icons/social/dribbble.svg' %}" alt=""></a>
+			<a href="#"><img src="{% static 'icons/social/send.svg' %}" alt=""></a>
+		</div> -->
+	</div>
+	 
+	 
+</section>
+ 
+ 
+<script src="{% static 'js/jquery-2.1.4.min.js' %}"></script>
+ 
+ <script src="{% static 'js/app.js' %}"></script>
+
+    </div>  
+    </body>
+</html>
